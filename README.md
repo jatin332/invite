@@ -110,13 +110,9 @@ Each event card has an **Add to calendar** action that downloads an `.ics` file.
 
 ## Music
 
-No audio file was supplied, so the music button is disabled and labeled as coming soon. To add music:
+The uploaded `Backgroundsong.mp3` is stored at `public/reference/Backgroundsong.mp3` and played from `/reference/Backgroundsong.mp3`. It starts when a guest clicks **Open wedding invitation**. Floating controls let guests pause/play or mute/unmute it, and the track loops while guests explore the invitation.
 
-1. Add a music file you have permission to use at `public/assets/wedding-music.mp3`.
-2. In `src/App.tsx`, add an HTML audio element or `Audio` instance that loads `/assets/wedding-music.mp3`.
-3. Connect the floating button to play/pause and mute state, and handle playback errors.
-4. Start playback only after the guest clicks the invitation or music control. Browsers generally block autoplay before user interaction.
-5. Update the music note in the UI and this section of the README to describe the included track.
+To change the track, replace `public/reference/Backgroundsong.mp3` with another MP3 using the same filename. Keep music behind a user action: browsers generally block audio autoplay before a guest taps or clicks the invitation. If you replace it with a larger file, remember that it will be included in the site's download and deployment size.
 
 ## Artwork, fonts, and sharing preview
 
@@ -130,7 +126,7 @@ Page title, description, Open Graph metadata, favicon reference, and Google Font
 - Navigation and interactive controls have labels or visible text.
 - Reduced-motion preferences are respected for decorative animation.
 - Event details can be expanded by keyboard-accessible buttons.
-- The music control stays disabled until an audio asset is configured.
+- Background music starts only after the guest opens the invitation and has pause/mute controls.
 
 ## Troubleshooting
 
